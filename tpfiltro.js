@@ -1,11 +1,12 @@
 // Tenemos un listado de productos
 
 var productos = [
-    { nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg" },
-    { nombre: "Zapato azul", tipo: "zapato", color: "azul", img: "./taco-azul.jpg" },
-    { nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg" },
-    { nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg" },
-    { nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg" }
+    { nombre: "SWEATER ALANIS ROSA - $3.800", tipo: "sweater", color: "rosa", img: "./sweater-rosa.jpg" },
+    { nombre: "SWEATER ALANIS AMARILLO - $3.800", tipo: "sweater", color: "amarillo", img: "./sweater-amarillo.jpg" },
+    { nombre: "SWEATER ALANIS AZUL - $3.800", tipo: "sweater", color: "azul", img: "./sweater-azul.jpg" },
+    { nombre: "CAMPERA ELIXIR ROSA - $3.790", tipo: "campera", color: "rosa", img: "./campera-rosa.jpg" },
+    { nombre: "CAMPERA ELIXIR AMARILLA - $3.790", tipo: "campera", color: "amarillo", img: "./campera-amarillo.jpg" },
+    { nombre: "CAMPERA ELIXIR ROSA - $3.790 ", tipo: "campera", color: "naranja", img: "./campera-naranja.jpg" }
 ]
 
 
@@ -28,8 +29,8 @@ for (let i = 0; i < productos.length; i++) {
     var imagen = document.createElement("img");
     imagen.setAttribute('src', productos[i].img);
 
-    div.appendChild(titulo)
     div.appendChild(imagen)
+    div.appendChild(titulo)
 
     // Agregamos el div al listado 
     listado.appendChild(div)
@@ -86,8 +87,8 @@ const filtroPorModelo = () => {
             var imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
 
-            div.appendChild(titulo)
             div.appendChild(imagen)
+            div.appendChild(titulo)
 
             // Agregamos el div al listado 
             listado.appendChild(div)
@@ -113,8 +114,8 @@ const filtroPorColor = () => {
             var imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
 
-            div.appendChild(titulo)
             div.appendChild(imagen)
+            div.appendChild(titulo)
 
             // Agregamos el div al listado 
             listado.appendChild(div)
@@ -127,9 +128,9 @@ const filtroPorColor = () => {
 botonDeFiltro.onclick = function (event) {
     console.log(placeholder.value)
     event.preventDefault();
-    if (placeholder.value === "zapato" || placeholder.value === "bota") {
+    if (placeholder.value === "campera" || placeholder.value === "sweater") {
         filtroPorModelo();
-    } else if (placeholder.value === "negro" || placeholder.value === "azul" || placeholder.value === "rojo") {
-            filtroPorColor();
-        }
+    } else if (placeholder.value === "azul" || placeholder.value === "amarillo" || placeholder.value === "rosa" || placeholder.value === "naranja") {
+        filtroPorColor();
     }
+}
