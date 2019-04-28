@@ -1,6 +1,6 @@
 // Tenemos un listado de productos
 
-var productos = [
+const productos = [
     { nombre: "SWEATER ALANIS ROSA - $3.800", tipo: "sweater", color: "rosa", img: "./sweater-rosa.jpg" },
     { nombre: "SWEATER ALANIS AMARILLO - $3.800", tipo: "sweater", color: "amarillo", img: "./sweater-amarillo.jpg" },
     { nombre: "SWEATER ALANIS AZUL - $3.800", tipo: "sweater", color: "azul", img: "./sweater-azul.jpg" },
@@ -12,21 +12,21 @@ var productos = [
 
 // Seleccionamos el listado apenas empezamos, porque
 // queremos tener esta variable disponible en todo nuestro codigo
-var listado = document.getElementById("lista-de-productos")
+const listado = document.getElementById("lista-de-productos")
 
 
 
 // Para mostrarlos, recorremos el listado con un for 
 for (let i = 0; i < productos.length; i++) {
     // Creamos un div, le añadimos el nombre y la imagen 
-    var div = document.createElement("div")
+    const div = document.createElement("div")
     div.classList.add("producto")
 
-    var titulo = document.createElement("p")
+    const titulo = document.createElement("p")
     titulo.classList.add("titulo")
     titulo.textContent = productos[i].nombre
 
-    var imagen = document.createElement("img");
+    const imagen = document.createElement("img");
     imagen.setAttribute('src', productos[i].img);
 
     div.appendChild(imagen)
@@ -37,7 +37,7 @@ for (let i = 0; i < productos.length; i++) {
 }
 
 
-var botonDeFiltro = document.querySelector("button")
+const botonDeFiltro = document.querySelector("button")
 
 botonDeFiltro.onclick = function () {
 
@@ -63,8 +63,7 @@ botonDeFiltro.onclick = function () {
 // Para puntos extra:
 // Dejar la pagina mas linda con CSS 
 
-var botonDeFiltro = document.querySelector("button")
-var placeholder = document.getElementById("placeholder");
+const placeholder = document.getElementById("placeholder");
 
 
 // Armo las funciones para filtrar
@@ -77,14 +76,14 @@ const filtroPorModelo = () => {
     };
     for (let i = 0; i < productos.length; i++) {
         if (productos[i].tipo === placeholder.value) {
-            var div = document.createElement("div")
+            const div = document.createElement("div")
             div.classList.add("producto")
 
-            var titulo = document.createElement("p")
+            const titulo = document.createElement("p")
             titulo.classList.add("titulo")
             titulo.textContent = productos[i].nombre
 
-            var imagen = document.createElement("img");
+            const imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
 
             div.appendChild(imagen)
@@ -104,14 +103,14 @@ const filtroPorColor = () => {
     };
     for (let i = 0; i < productos.length; i++) {
         if (productos[i].color === placeholder.value) {
-            var div = document.createElement("div")
+            const div = document.createElement("div")
             div.classList.add("producto")
 
-            var titulo = document.createElement("p")
+            const titulo = document.createElement("p")
             titulo.classList.add("titulo")
             titulo.textContent = productos[i].nombre
 
-            var imagen = document.createElement("img");
+            const imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
 
             div.appendChild(imagen)
