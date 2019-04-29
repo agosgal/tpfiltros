@@ -39,19 +39,6 @@ for (let i = 0; i < productos.length; i++) {
 
 const botonDeFiltro = document.querySelector("button")
 
-botonDeFiltro.onclick = function () {
-
-    // primero, recorremos con un while todos los "hijos" del listado
-    // y los borramos
-
-    while (listado.firstChild) {
-        listado.removeChild(listado.firstChild);
-    }
-
-    // despues les toca a uds el resto :)
-
-}
-
 
 // Tarea: 
 // Si el usuario escribe "zapato", mostrar los zapatos
@@ -65,23 +52,20 @@ botonDeFiltro.onclick = function () {
 
 const placeholder = document.getElementById("placeholder");
 
+// Armo el filtro
 
-// Armo las funciones para filtrar
-
-// Por modelo
-
-const filtroPorModelo = () => {
+const filtroGeneral = () => {
     while (listado.firstChild) {
         listado.removeChild(listado.firstChild);
     };
     for (let i = 0; i < productos.length; i++) {
-        if (productos[i].tipo === placeholder.value) {
+        if (productos[i].tipo === placeholder.value || productos[i].color === placeholder.value) {
             const div = document.createElement("div")
             div.classList.add("producto")
 
             const titulo = document.createElement("p")
             titulo.classList.add("titulo")
-            titulo.textContent = productos[i].nombre
+            titulo.textContent = "productos[i].nombre"
 
             const imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
@@ -95,41 +79,19 @@ const filtroPorModelo = () => {
     }
 };
 
-// Por color color
 
-const filtroPorColor = () => {
+// Armo los condicionales
+
+botonDeFiltro.onclick = function (event) {
     while (listado.firstChild) {
         listado.removeChild(listado.firstChild);
     };
-    for (let i = 0; i < productos.length; i++) {
-        if (productos[i].color === placeholder.value) {
-            const div = document.createElement("div")
-            div.classList.add("producto")
-
-            const titulo = document.createElement("p")
-            titulo.classList.add("titulo")
-            titulo.textContent = productos[i].nombre
-
-            const imagen = document.createElement("img");
-            imagen.setAttribute('src', productos[i].img);
-
-            div.appendChild(imagen)
-            div.appendChild(titulo)
-
-            // Agregamos el div al listado 
-            listado.appendChild(div)
+    for (let i = 0; i < productos.length ; i++) {
+        if (placeholder.value === productos[i].color || placeholder.value === productos[i].tipo) {
+            filtroGeneral();
+            console.log("igual")
         }
     }
 }
 
-// Armo el condicional para que valide el texto ingresado
 
-botonDeFiltro.onclick = function (event) {
-    console.log(placeholder.value)
-    event.preventDefault();
-    if (placeholder.value === "campera" || placeholder.value === "sweater") {
-        filtroPorModelo();
-    } else if (placeholder.value === "azul" || placeholder.value === "amarillo" || placeholder.value === "rosa" || placeholder.value === "naranja") {
-        filtroPorColor();
-    }
-}

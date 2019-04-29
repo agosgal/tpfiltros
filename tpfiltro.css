@@ -54,7 +54,7 @@ button {
   
 }
   
-  #lista-de-productos {
+#lista-de-productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -62,24 +62,24 @@ button {
     padding-left: 30px
   }
   
-  .producto {
-    width: 850;
-    height: auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 13px;
-    background: black;
-    color: white;  
-    margin-bottom: 30px
-  }
+.producto {
+  width: 850;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 13px;
+  background: black;
+  color: white;  
+  margin-bottom: 30px
+}
   
-  .producto img {
-    width: 350px;
-    height: auto;
-  };
+.producto img {
+  width: 350px;
+  height: auto;
+};
 
-  .producto p.titulo{
-    margin-left: 30px
-  }
+.titulo {
+  margin-left: 30px
+}
