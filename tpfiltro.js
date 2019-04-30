@@ -82,10 +82,12 @@ const filtroGeneral = () => {
 
 // Armo los condicionales
 
-var distinto = 0
 
 botonDeFiltro.onclick = function (event) {
+    var distinto = 0
+    console.log("ENTRO A ONCLICK")
     while (listado.firstChild) {
+        console.log("ENTRO AL WHILE")
         listado.removeChild(listado.firstChild);
     };
 
