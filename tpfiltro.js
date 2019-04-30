@@ -82,16 +82,35 @@ const filtroGeneral = () => {
 
 // Armo los condicionales
 
+var distinto = 0
+
 botonDeFiltro.onclick = function (event) {
     while (listado.firstChild) {
         listado.removeChild(listado.firstChild);
     };
-    for (let i = 0; i < productos.length ; i++) {
-        if (placeholder.value === productos[i].color || placeholder.value === productos[i].tipo) {
-            filtroGeneral();
-            console.log("igual")
+
+    for (let i = 0; i < productos.length; i++) {
+        if (placeholder.value !== productos[i].color && placeholder.value !== productos[i].tipo) {
+            distinto = distinto + 1;
+            if (distinto === productos.length) {
+                console.log("No encuentra nada");
+                const diverror = document.createElement("div")
+                const textoerror = document.createElement("p")
+                textoerror.textContent = "No tenemos resultados para tu búsqueda. Porfa probá de nuevo!"
+                textoerror.classList.add("error")
+                diverror.appendChild(textoerror)
+                listado.appendChild(diverror)
+
+            }
+        } else {
+            for (let i = 0; i < productos.length; i++) {
+                if (placeholder.value === productos[i].color || placeholder.value === productos[i].tipo) {
+                    filtroGeneral();
+                    console.log("igual")
+                }
+
+            }
         }
+
     }
 }
-
-
