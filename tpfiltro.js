@@ -65,7 +65,7 @@ const filtroGeneral = () => {
 
             const titulo = document.createElement("p")
             titulo.classList.add("titulo")
-            titulo.textContent = "productos[i].nombre"
+            titulo.textContent = productos[i].nombre
 
             const imagen = document.createElement("img");
             imagen.setAttribute('src', productos[i].img);
